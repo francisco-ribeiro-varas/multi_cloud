@@ -1,0 +1,99 @@
+/* Configuración General */
+body {
+    background-color: #12161f;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    margin: 0;
+}
+
+/* Contenedor Principal */
+.main-container {
+    background-color: #1a1f29;
+    padding: 30px;
+    border-radius: 25px;
+    width: 450px;
+    text-align: center;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Caja de Contador */
+.counter-box {
+    background: #12161f;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #333;
+}
+
+.counter-number {
+    color: #3498db;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Botones */
+.btn-nav {
+    display: block;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    transition: transform 0.2s;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-nav:hover {
+    transform: scale(1.02);
+}
+
+/* Tarjetas de Tarea */
+.task-card {
+    background: #242a38;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    text-align: left;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Inputs y Formularios */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, select {
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #0d1117;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* --- SOLUCIÓN ICONO CALENDARIO BLANCO --- */
+input[type="date"] {
+    color-scheme: light; /* Ayuda al navegador a entender el fondo oscuro */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%) brightness(150%); /* Fuerza el color blanco */
+    cursor: pointer;
+    margin-right: 5px;
+}

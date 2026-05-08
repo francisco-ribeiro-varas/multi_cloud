@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Gestión de Tareas</h1>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <a href="/formulario" class="btn-nav" style="flex: 1;">+ AGREGAR</a>
+            <a href="/historial" class="btn-nav" style="flex: 1; background: #2c3e50;">📜 HISTORIAL</a>
+        </div>
+        <div class="lista">
+            {% for tarea in tareas %}
+                <div class="task-card">
+                    <div>
+                        <h3 style="margin: 0;">{{ tarea[1] }}</h3>
+                        <p style="margin: 5px 0 0; font-size: 13px; color: #888;">Entrega: {{ tarea[3] }}</p>
+                    </div>
+                    <a href="/completar_menu/{{ tarea[0] }}" style="background: #27ae60; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold;">✔</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

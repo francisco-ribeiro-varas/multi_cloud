@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Tarea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="align-items: center; height: 100vh; padding: 0;">
+    <div class="main-container" style="width: 380px;">
+        <h2>Finalizar Tarea</h2>
+        <div style="text-align: left; background: #12161f; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #333;">
+            <p><strong>Tarea:</strong> {{ tarea[1] }}</p>
+            <p><strong>Prioridad:</strong> {{ tarea[2] }}</p>
+            <p><strong>Fecha Límite:</strong> {{ tarea[3] }}</p>
+        </div>
+        <form action="/subir_completada/{{ tarea[0] }}" method="POST" enctype="multipart/form-data" class="form-group">
+            <label style="color: #888; font-size: 14px;">Sube la evidencia (Imagen):</label>
+            <input type="file" name="imagen" required>
+            <button type="submit" class="btn-nav" style="background: #27ae60; border: none; cursor: pointer;">COMPLETAR AHORA</button>
+            <a href="/" style="color: #666; text-decoration: none; font-size: 14px;">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

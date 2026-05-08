@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Tarea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="align-items: center; height: 100vh; padding: 0;">
+    <div class="main-container" style="width: 380px;">
+        <h2 style="margin-bottom: 30px;">Añadir Tarea</h2>
+        
+        <form action="/guardar" method="POST" class="form-group">
+            <input type="text" name="nombre" placeholder="Nombre de la tarea" required>
+            
+            <select name="prioridad">
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+            </select>
+            
+            <input type="date" name="fecha" required>
+            
+            <button type="submit" class="btn-nav">
+                GUARDAR TAREA
+            </button>
+            
+            <a href="/" style="color: #666; text-decoration: none; font-size: 14px; margin-top: 5px;">⬅ Volver a la lista</a>
+        </form>
+    </div>
+</body>
+</html>

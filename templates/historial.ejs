@@ -2,29 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Historial de Tareas</title>
+    <title>Historial</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="main-container">
         <h1>Tareas Completadas</h1>
-        <a href="/" class="btn-nav" style="background: #7f8c8d; margin-bottom: 20px;">⬅ VOLVER AL INICIO</a>
+        <a href="/" class="btn-nav" style="background: #34495e; margin-bottom: 20px; border: none;">⬅ VOLVER AL INICIO</a>
         
         <div class="lista">
             {% for tarea in tareas %}
-                <div class="task-card" style="flex-direction: column; align-items: flex-start; gap: 15px;">
-                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                <div class="task-card" style="flex-direction: column; align-items: flex-start; gap: 15px; background: #242a38; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; width: 100%;">
                         <h3 style="margin: 0;">{{ tarea[1] }}</h3>
-                        <span style="font-size: 11px; color: #27ae60; border: 1px solid #27ae60; padding: 2px 8px; border-radius: 10px;">COMPLETADA</span>
+                        <span style="color: #27ae60; font-weight: bold; font-size: 12px;">LOGRADO</span>
                     </div>
-                    
-                    <div style="width: 100%; height: 200px; background: #0d1117; border-radius: 10px; overflow: hidden; border: 1px solid #333;">
-                        <img src="{{ url_for('ver_foto', filename=tarea[4]) }}" 
-                             style="width: 100%; height: 100%; object-fit: cover;" 
-                             alt="Evidencia">
+
+                    <div style="width: 100%; border-radius: 10px; overflow: hidden; border: 1px solid #444; background: #000;">
+                        <img src="/static/uploads/{{ tarea[4] }}" style="width: 100%; display: block;" alt="Evidencia">
                     </div>
-                    
-                    <p style="margin: 0; font-size: 12px; color: #555;">Finalizada el: {{ tarea[3] }}</p>
+
+                    <p style="margin: 0; font-size: 12px; color: #666;">Finalizada: {{ tarea[3] }}</p>
                 </div>
             {% endfor %}
         </div>
